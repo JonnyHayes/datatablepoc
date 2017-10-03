@@ -4,32 +4,68 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Your awesome title</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
-
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/feed.xml">
 
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
 
+
+  <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="//datatables.net/media/js/site.js?_=d78b222e2531b63c1f8683e47301add9"></script>
+
+  <!-- <script type="text/javascript" src="/media/js/site.js?_=d78b222e2531b63c1f8683e47301add9"></script> -->
+  <!-- <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script> -->
+	<script type="text/javascript" language="javascript" src="//cdn.datatables.net/responsive/1.0.0/js/dataTables.responsive.min.js"></script>
 <script>
 $( document ).ready(function() {
-     $('#myTable').DataTable(
-
-        {
+     $('#myTable')
+     .addClass( 'nowrap' )
+     .DataTable(
+       {
           paging: false,
-          scrollY: 400
+					responsive: true,
+					columnDefs: [
+						{ targets: [-1, -2, -3 , -4, -5], className: 'dt-body-right' },
+            { targets: [-6], className: 'sorting_1 ' }
+					]
         }
+      );
+      var list = $('div.w-g-l > ul');
+			list.children(':gt(7)').css( 'display', 'none' );
 
-     );
+			var showingFull = false;
+			$('<li><a>Show more features...</a></li>')
+				.on( 'click', function (e) {
+					e.preventDefault;
 
+					if ( showingFull ) {
+						list.children(':gt(7)').css( 'display', 'none' );
+						list.children(':last').css( 'display', 'block' );
+						$('a', this).html('Show more features...');
+						showingFull = false;
+					}
+					else {
+						list.find('li').css( 'display', 'block' );
+						$('a', this).html('Show less');
+						showingFull = true;
+					}
+				} )
+				.appendTo( list );
 
 });
+
+
+
+
+
 
 </script>
 </head>
@@ -58,24 +94,7 @@ $( document ).ready(function() {
         </label>
 
         <div class="trigger">
-
-
-
-
-
-
             <!-- <a class="page-link" href="/about/">About</a> -->
-
-
-
-
-
-
-
-
-
-
-
         </div>
       </nav>
 
@@ -106,8 +125,9 @@ $( document ).ready(function() {
   </ul>
 
   <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
+  Which Checking Account is right for you?
+  <table class="display" cellspacing="0" border="1"   id="myTable" width="100%">
 
-  <table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" cellpadding="0" dir="ltr" border="1" id="myTable">
     <colgroup>
     <col width="804"/>
     <col width="333"/>
@@ -118,178 +138,178 @@ $( document ).ready(function() {
     </colgroup>
 
       <thead>
-        <tr>
-        <th rowspan="1" colspan="6" data-sheets-value="{'1':2,'2':'Which Checking Account is right for you? '}">Which Checking Account is right for you? </th>
+        <tr role="row">
+
       </tr>
-      <tr>
-        <th data-sheets-value="{'1':2,'2':'ACCOUNT FEATURES'}">ACCOUNT FEATURES</td>
-        <th data-sheets-value="{'1':2,'2':'Pure Checking'}">Pure Checking</td>
-        <th data-sheets-value="{'1':2,'2':'Complete Checking'}">Complete Checking</td>
-        <th data-sheets-value="{'1':2,'2':'Priority Banking Level 1'}">Priority Banking Level 1</td>
-        <th data-sheets-value="{'1':2,'2':'Priority Banking Level 2'}">Priority Banking Level 2</td>
-        <th data-sheets-value="{'1':2,'2':'Priority Banking Level 3'}">Priority Banking Level 3</td>
+      <tr role="row">
+        <th>ACCOUNT FEATURES</td>
+        <th>Pure Checking</td>
+        <th>Complete Checking</td>
+        <th>Priority Banking Level 1</td>
+        <th>Priority Banking Level 2</td>
+        <th>Priority Banking Level 3</td>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Minimum Opening Balance'}">Minimum Opening Balance</td>
-        <td data-sheets-value="{'1':2,'2':'$100 ($5 with direct deposit)'}" data-sheets-numberformat="[null,2,'\'$\'#,##0_);[Red]\\(\'$\'#,##0\\)',1]">$100 ($5 with direct deposit)</td>
-        <td data-sheets-value="{'1':2,'2':'$100 ($5 with direct deposit)'}" data-sheets-numberformat="[null,2,'\'$\'#,##0_);[Red]\\(\'$\'#,##0\\)',1]">$100 ($5 with direct deposit)</td>
-        <td data-sheets-value="{'1':2,'2':'$100 ($5 with direct deposit)'}" data-sheets-numberformat="[null,2,'\'$\'#,##0_);[Red]\\(\'$\'#,##0\\)',1]">$100 ($5 with direct deposit)</td>
-        <td data-sheets-value="{'1':2,'2':'$100 ($5 with direct deposit)'}" data-sheets-numberformat="[null,2,'\'$\'#,##0_);[Red]\\(\'$\'#,##0\\)',1]">$100 ($5 with direct deposit)</td>
-        <td data-sheets-value="{'1':3,'3':1000}" data-sheets-numberformat="[null,2,'\'$\'#,##0_);[Red]\\(\'$\'#,##0\\)',1]">$1,000 </td>
+      <tr role="row">
+        <td>Minimum Opening Balance</td>
+        <td>$100 ($5 with direct deposit)</td>
+        <td>$100 ($5 with direct deposit)</td>
+        <td>$100 ($5 with direct deposit)</td>
+        <td>$100 ($5 with direct deposit)</td>
+        <td>$1,000 </td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':' Service Fee'}"> Service Fee</td>
-        <td data-sheets-value="{'1':2,'2':'$0 ($2/mo with paper statements)'}">$0 ($2/mo with paper statements)</td>
-        <td data-sheets-value="{'1':2,'2':'$0 (with monthly direct deposits of $1,500, or $7/mo)'}">$0 (with monthly direct deposits of $1,500, or $7/mo)</td>
-        <td data-sheets-value="{'1':2,'2':'$0 (with combined balance of $6,000 or $15/mo)'}">$0 (with combined balance of $6,000 or $15/mo)</td>
-        <td data-sheets-value="{'1':2,'2':'$0 (with combined balance of $20,000 per month, or $19/mo)'}">$0 (with combined balance of $20,000 per month, or $19/mo)</td>
-        <td data-sheets-value="{'1':2,'2':'$0 (with combined balance of $35,000 per month, or $22/mo)'}">$0 (with combined balance of $35,000 per month, or $22/mo)</td>
+      <tr role="row">
+        <td> Service Fee</td>
+        <td>$0 ($2/mo with paper statements)</td>
+        <td>$0 (with monthly direct deposits of $1,500, or $7/mo)</td>
+        <td>$0 (with combined balance of $6,000 or $15/mo)</td>
+        <td>$0 (with combined balance of $20,000 per month, or $19/mo)</td>
+        <td>$0 (with combined balance of $35,000 per month, or $22/mo)</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Free Online and Mobile Banking, Mobile Check Deposit'}">Free Online and Mobile Banking, Mobile Check Deposit</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+      <tr role="row">
+        <td>Free Online and Mobile Banking, Mobile Check Deposit</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Free Online Bill Payment'}">Free Online Bill Payment</td>
-        <td data-sheets-value="{'1':2,'2':'$0 with monthly direct deposit of $500/mo'}">$0 with monthly direct deposit of $500/mo</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+      <tr role="row">
+        <td>Free Online Bill Payment</td>
+        <td>$0 with monthly direct deposit of $500/mo</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Free Checks (Select Designs)'}">Free Checks (Select Designs)</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+      <tr role="row">
+        <td>Free Checks (Select Designs)</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Earns Interest'}">Earns Interest</td>
+      <tr role="row">
+        <td>Earns Interest</td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Mastercard Enhanced Security Services with ID Theft Protection, Credit Monitoring, Cell Phone Protection, Overdraft Protection'}">Mastercard Enhanced Security Services with ID Theft Protection, Credit Monitoring, Cell Phone Protection, Overdraft Protection</td>
+      <tr role="row">
+        <td>Mastercard Enhanced Security Services with ID Theft Protection, Credit Monitoring, Cell Phone Protection, Overdraft Protection</td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
         <td></td>
         <td></td>
         <td></td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Personal Loan Discounts'}">Personal Loan Discounts</td>
+      <tr role="row">
+        <td>Personal Loan Discounts</td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':2,'2':'0.25% Off '}" data-sheets-numberformat="[null,2,'0.00%',1]">0.25% Off </td>
-        <td data-sheets-value="{'1':2,'2':'0.25% Off'}">0.25% Off</td>
-        <td data-sheets-value="{'1':2,'2':'.35% Off'}">.35% Off</td>
+        <td>0.25% Off </td>
+        <td>0.25% Off</td>
+        <td>.35% Off</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Home Equity Line and Loan Discounts'}">Home Equity Line and Loan Discounts</td>
+      <tr role="row">
+        <td>Home Equity Line and Loan Discounts</td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':2,'2':'0.25% Off '}">0.25% Off </td>
-        <td data-sheets-value="{'1':2,'2':'.35% Off'}">.35% Off</td>
+        <td>0.25% Off </td>
+        <td>.35% Off</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Mortgage Underwriting Fee Discount'}">Mortgage Underwriting Fee Discount</td>
+      <tr role="row">
+        <td>Mortgage Underwriting Fee Discount</td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':2,'2':'$250 Off'}">$250 Off</td>
-        <td data-sheets-value="{'1':2,'2':'$250 Off'}">$250 Off</td>
+        <td>$250 Off</td>
+        <td>$250 Off</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Doc Prep Fee for New Residential Mortgage'}">Doc Prep Fee for New Residential Mortgage</td>
+      <tr role="row">
+        <td nowrap>Doc Prep Fee for New Residential Mortgage</td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':2,'2':'$135 Off'}">$135 Off</td>
+        <td>$135 Off</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Safety Deposit Box Discount'}">Safety Deposit Box Discount</td>
+      <tr role="row">
+        <td>Safety Deposit Box Discount</td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Free Notary Service Fee'}">Free Notary Service Fee</td>
+      <tr role="row">
+        <td>Free Notary Service Fee</td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'No Fee Travelers Checks'}">No Fee Travelers Checks</td>
+      <tr role="row">
+        <td>No Fee Travelers Checks</td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'No fees for Incoming Wire Transfers, Saving Overdraft Transfer, Official Bank Checks and Money Orders'}">No fees for Incoming Wire Transfers, Saving Overdraft Transfer, Official Bank Checks and Money Orders</td>
+      <tr role="row">
+        <td>No fees for Incoming Wire Transfers, Saving Overdraft Transfer, Official Bank Checks and Money Orders</td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'No Network ATM Fees '}">No Network ATM Fees </td>
+      <tr role="row">
+        <td>No Network ATM Fees </td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'No Annual Fees for Yes-Check Overdraft Protection or Lines of Credit'}">No Annual Fees for Yes-Check Overdraft Protection or Lines of Credit</td>
+      <tr role="row">
+        <td>No Annual Fees for Yes-Check Overdraft Protection or Lines of Credit</td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'No Early Withdrawal Penalty on CDs for Health'}">No Early Withdrawal Penalty on CDs for Health</td>
+      <tr role="row">
+        <td>No Early Withdrawal Penalty on CDs for Health</td>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Eligible for Priority Savings'}">Eligible for Priority Savings</td>
+      <tr role="row">
+        <td>Eligible for Priority Savings</td>
         <td></td>
         <td></td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
-        <td data-sheets-value="{'1':3,'3':4}">4</td>
+        <td>4</td>
+        <td>4</td>
+        <td>4</td>
       </tr>
-      <tr>
-        <td data-sheets-value="{'1':2,'2':'Personalized Service'}">Personalized Service</td>
-        <td data-sheets-value="{'1':2,'2':'Personal Banker'}">Personal Banker</td>
-        <td data-sheets-value="{'1':2,'2':'Personal Banker'}">Personal Banker</td>
-        <td data-sheets-value="{'1':2,'2':'Personal Banker'}">Personal Banker</td>
-        <td data-sheets-value="{'1':2,'2':'Personal Banker'}">Personal Banker</td>
-        <td data-sheets-value="{'1':2,'2':'Personal Banker'}">Personal Banker</td>
+      <tr role="row">
+        <td>Personalized Service</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
       </tr>
     </tbody>
   </table>

@@ -118,6 +118,7 @@ pre {
 .wrapper {
   /*max-width: -webkit-calc(800px - (30px * 2));
   max-width: calc(800px - (30px * 2));*/
+  /*max-width:100%;*/
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
@@ -468,3 +469,4 @@ pre {
     color: #008080; }
   .highlight .il {
     color: #099; }
+table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTable.dtr-inline.collapsed tbody th:first-child:before {top:4px;}
