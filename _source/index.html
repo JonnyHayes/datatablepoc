@@ -9,9 +9,12 @@
 
   <title>Your awesome title</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
+  <!-- <link rel="stylesheet" type="text/css" href="/assets/sites.css?_=758e23b3f1a4c34d6c055f5cc10bae7e"> -->
+    <link rel="stylesheet" type="text/css" href="//datatables.net/media/css/site.css">
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+
+  <link rel="canonical" href="">
   <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="/feed.xml">
 
   <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
@@ -20,6 +23,7 @@
   <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="//datatables.net/media/js/site.js?_=d78b222e2531b63c1f8683e47301add9"></script>
+  <script type="text/javascript" src="/assets/js/sites.js?_=d78b222e2531b63c1f8683e47301add9"></script>
 
   <!-- <script type="text/javascript" src="/media/js/site.js?_=d78b222e2531b63c1f8683e47301add9"></script> -->
   <!-- <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script> -->
@@ -27,11 +31,12 @@
 <script>
 $( document ).ready(function() {
      $('#myTable')
-     .addClass( 'nowrap' )
+    //  .addClass( 'nowrap' )
      .DataTable(
        {
           paging: false,
 					responsive: true,
+            ordering:  false,
 					columnDefs: [
 						{ targets: [-1, -2, -3 , -4, -5], className: 'dt-body-right' },
             { targets: [-6], className: 'sorting_1 ' }
@@ -126,7 +131,7 @@ $( document ).ready(function() {
 
   <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p> -->
   Which Checking Account is right for you?
-  <table class="display" cellspacing="0" border="1"   id="myTable" width="100%">
+  <table class="display" cellspacing="0" border="0"   id="myTable" width="100%">
 
     <colgroup>
     <col width="804"/>
@@ -168,41 +173,52 @@ $( document ).ready(function() {
         <td>$0 (with combined balance of $35,000 per month, or $22/mo)</td>
       </tr>
       <tr role="row">
-        <td>Free Online and Mobile Banking, Mobile Check Deposit</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
+        <td>Personalized Service</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
+        <td>Personal Banker</td>
       </tr>
+
       <tr role="row">
         <td>Free Online Bill Payment</td>
         <td>$0 with monthly direct deposit of $500/mo</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
       </tr>
+
+      <tr role="row">
+        <td>Free Online and Mobile Banking, Mobile Check Deposit</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+      </tr>
+
       <tr role="row">
         <td>Free Checks (Select Designs)</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>Earns Interest</td>
         <td></td>
         <td></td>
         <td></td>
-        <td>4</td>
-        <td>4</td>
+        <td>+</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>Mastercard Enhanced Security Services with ID Theft Protection, Credit Monitoring, Cell Phone Protection, Overdraft Protection</td>
         <td></td>
-        <td>4</td>
+        <td>+</td>
         <td></td>
         <td></td>
         <td></td>
@@ -213,7 +229,7 @@ $( document ).ready(function() {
         <td></td>
         <td>0.25% Off </td>
         <td>0.25% Off</td>
-        <td>.35% Off</td>
+        <td>0.35% Off</td>
       </tr>
       <tr role="row">
         <td>Home Equity Line and Loan Discounts</td>
@@ -221,7 +237,7 @@ $( document ).ready(function() {
         <td></td>
         <td></td>
         <td>0.25% Off </td>
-        <td>.35% Off</td>
+        <td>0.35% Off</td>
       </tr>
       <tr role="row">
         <td>Mortgage Underwriting Fee Discount</td>
@@ -232,7 +248,7 @@ $( document ).ready(function() {
         <td>$250 Off</td>
       </tr>
       <tr role="row">
-        <td nowrap>Doc Prep Fee for New Residential Mortgage</td>
+        <td class="nowrap" >Doc Prep Fee for New Residential Mortgage</td>
         <td></td>
         <td></td>
         <td></td>
@@ -242,34 +258,34 @@ $( document ).ready(function() {
       <tr role="row">
         <td>Safety Deposit Box Discount</td>
         <td></td>
-        <td>4</td>
+        <td>+</td>
         <td></td>
-        <td>4</td>
-        <td>4</td>
+        <td>+</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>Free Notary Service Fee</td>
         <td></td>
-        <td>4</td>
+        <td>+</td>
         <td></td>
-        <td>4</td>
-        <td>4</td>
+        <td>+</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>No Fee Travelers Checks</td>
         <td></td>
         <td></td>
         <td></td>
-        <td>4</td>
-        <td>4</td>
+        <td>+</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>No fees for Incoming Wire Transfers, Saving Overdraft Transfer, Official Bank Checks and Money Orders</td>
         <td></td>
         <td></td>
         <td></td>
-        <td>4</td>
-        <td>4</td>
+        <td>+</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>No Network ATM Fees </td>
@@ -277,7 +293,7 @@ $( document ).ready(function() {
         <td></td>
         <td></td>
         <td></td>
-        <td>4</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>No Annual Fees for Yes-Check Overdraft Protection or Lines of Credit</td>
@@ -285,7 +301,7 @@ $( document ).ready(function() {
         <td></td>
         <td></td>
         <td></td>
-        <td>4</td>
+        <td>+</td>
       </tr>
       <tr role="row">
         <td>No Early Withdrawal Penalty on CDs for Health</td>
@@ -293,24 +309,17 @@ $( document ).ready(function() {
         <td></td>
         <td></td>
         <td></td>
-        <td>4</td>
+        <td>+</td>
       </tr>
-      <tr role="row">
+      <!-- <tr role="row">
         <td>Eligible for Priority Savings</td>
         <td></td>
         <td></td>
         <td>4</td>
         <td>4</td>
         <td>4</td>
-      </tr>
-      <tr role="row">
-        <td>Personalized Service</td>
-        <td>Personal Banker</td>
-        <td>Personal Banker</td>
-        <td>Personal Banker</td>
-        <td>Personal Banker</td>
-        <td>Personal Banker</td>
-      </tr>
+      </tr> -->
+
     </tbody>
   </table>
 </div>

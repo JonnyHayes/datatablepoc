@@ -469,4 +469,6 @@ pre {
     color: #008080; }
   .highlight .il {
     color: #099; }
-table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTable.dtr-inline.collapsed tbody th:first-child:before {top:4px;}
+/*table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTable.dtr-inline.collapsed tbody th:first-child:before {top:4px;}*/
+table.dataTable.nowrap th, table.dataTable.nowrap td { white-space :initial}
+.odd { background-color:#f1f1f1;}
